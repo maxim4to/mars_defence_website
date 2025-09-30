@@ -238,6 +238,85 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('loaded');
     });
 
+    // Screenshots Gallery functionality
+    const screenshotDisplay = document.getElementById('screenshotDisplay');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const screenshotImages = document.querySelectorAll('.screenshot-image');
+    
+    if (screenshotDisplay && prevBtn && nextBtn && screenshotImages.length > 0) {
+        let currentIndex = 0;
+        const totalImages = screenshotImages.length;
+        
+        // Show specific image
+        function showImage(index) {
+            // Remove active class from all images
+            screenshotImages.forEach(img => img.classList.remove('active'));
+            
+            // Add active class to current image
+            screenshotImages[index].classList.add('active');
+        }
+        
+        // Move to next image
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % totalImages;
+            showImage(currentIndex);
+        }
+        
+        // Move to previous image
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            showImage(currentIndex);
+        }
+        
+        // Event listeners
+        nextBtn.addEventListener('click', nextImage);
+        prevBtn.addEventListener('click', prevImage);
+        
+        // Touch/swipe support for mobile
+        let startX = 0;
+        let isDragging = false;
+        
+        screenshotDisplay.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        });
+        
+        screenshotDisplay.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+        });
+        
+        screenshotDisplay.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            
+            const endX = e.changedTouches[0].clientX;
+            const diffX = startX - endX;
+            const threshold = 50;
+            
+            if (Math.abs(diffX) > threshold) {
+                if (diffX > 0) {
+                    nextImage();
+                } else {
+                    prevImage();
+                }
+            }
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevImage();
+            } else if (e.key === 'ArrowRight') {
+                nextImage();
+            }
+        });
+        
+        // Initialize gallery
+        showImage(currentIndex);
+    }
+
     // Console message for developers
     console.log('%c🚀 Mars Defence Website', 'color: #f2d271; font-size: 20px; font-weight: bold;');
     console.log('%cWelcome to the developer console!', 'color: #a63d39; font-size: 14px;');
