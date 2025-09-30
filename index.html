@@ -154,7 +154,7 @@
                     </div>
                 </div>
 
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/mblzobva" method="POST">
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Name" required>
                     </div>
@@ -164,6 +164,10 @@
                     <div class="form-group">
                         <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
                     </div>
+                    <!-- Hidden field for form identification -->
+                    <input type="hidden" name="_subject" value="Mars Defence - Contact Form">
+                    <input type="hidden" name="_next" value="?success=true">
+                    <input type="hidden" name="_captcha" value="false">
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>

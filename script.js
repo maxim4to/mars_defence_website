@@ -30,9 +30,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const formMessage = document.getElementById('formMessage');
     const formError = document.getElementById('formError');
 
+    // Check for success parameter in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+        showSuccess();
+        // Clean URL
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
         // Hide previous messages
         formMessage.style.display = 'none';
         formError.style.display = 'none';
@@ -45,20 +51,28 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Basic validation
         if (!name || !email || !message) {
+            e.preventDefault();
             showError('Please fill in all fields');
             return;
         }
         
         if (!isValidEmail(email)) {
+            e.preventDefault();
             showError('Please enter a valid email address');
             return;
         }
         
-        // Simulate form submission
+        // Show loading state
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        // Reset button after form submission
         setTimeout(() => {
-            showSuccess();
-            contactForm.reset();
-        }, 1000);
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }, 2000);
     });
 
     function showSuccess() {
