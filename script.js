@@ -104,9 +104,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
-            header.style.background = 'rgba(0, 0, 0, 0.95)';
+            header.style.background = 'rgba(19, 15, 37, 0.95)';
         } else {
-            header.style.background = 'rgba(0, 0, 0, 0.9)';
+            header.style.background = 'rgba(19, 15, 37, 0.9)';
         }
     });
 
