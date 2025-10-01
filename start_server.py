@@ -19,6 +19,34 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
         self.send_header('Access-Control-Allow-Headers', 'Content-Type')
         super().end_headers()
+    
+    def do_GET(self):
+        # Check if the request is for app-ads.txt
+        if self.path == '/app-ads.txt':
+            try:
+                # Read the app-ads.txt file
+                with open('app-ads.txt', 'rb') as f:
+                    content = f.read()
+                
+                # Set headers to force download
+                self.send_response(200)
+                self.send_header('Content-Type', 'text/plain')
+                self.send_header('Content-Disposition', 'attachment; filename="app-ads.txt"')
+                self.send_header('Content-Length', str(len(content)))
+                self.end_headers()
+                
+                # Send the file content
+                self.wfile.write(content)
+                return
+            except FileNotFoundError:
+                self.send_error(404, "File not found")
+                return
+            except Exception as e:
+                self.send_error(500, f"Server error: {str(e)}")
+                return
+        
+        # For all other requests, use the default behavior
+        super().do_GET()
 
 def start_server():
     """Starts local HTTP server"""

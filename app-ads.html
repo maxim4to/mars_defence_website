@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download app-ads.txt - Mars Defence</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .download-btn {
+            background-color: #007AFF;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+        .download-btn:hover {
+            background-color: #0056CC;
+        }
+        .back-link {
+            color: #007AFF;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Download app-ads.txt</h1>
+        <p>Click the button below to download the app-ads.txt file for Mars Defence.</p>
+        
+        <a href="app-ads.txt" download="app-ads.txt" class="download-btn">
+            Download app-ads.txt
+        </a>
+        
+        <br>
+        <a href="index.html" class="back-link">← Back to Mars Defence</a>
+    </div>
+
+    <script>
+        // Auto-download when page loads
+        window.onload = function() {
+            // Create a temporary link and click it to trigger download
+            const link = document.createElement('a');
+            link.href = 'app-ads.txt';
+            link.download = 'app-ads.txt';
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };
+    </script>
+</body>
+</html>

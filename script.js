@@ -331,6 +331,22 @@ document.addEventListener('DOMContentLoaded', function() {
         showImage(currentIndex);
     }
 
+    // Function to force download of app-ads.txt
+    function downloadAppAds() {
+        const link = document.createElement('a');
+        link.href = 'app-ads.txt';
+        link.download = 'app-ads.txt';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    // Check if we're on app-ads.txt page and auto-download
+    if (window.location.pathname.includes('app-ads.txt')) {
+        downloadAppAds();
+    }
+
     // Console message for developers
     console.log('%c🚀 Mars Defence Website', 'color: #f2d271; font-size: 20px; font-weight: bold;');
     console.log('%cWelcome to the developer console!', 'color: #a63d39; font-size: 14px;');

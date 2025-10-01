@@ -1,0 +1,28 @@
+# GitHub Pages configuration for Mars Defence
+title: Mars Defence
+description: An exciting tower defense game where you defend your Martian colony from alien invaders
+baseurl: ""
+url: ""
+
+# GitHub Pages settings
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Exclude files from processing
+exclude:
+  - start_server.py
+  - README.md
+  - .gitignore
+
+# Include files
+include:
+  - app-ads.txt
+  - .htaccess
+
+# Default settings
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

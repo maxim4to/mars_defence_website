@@ -1,0 +1,5 @@
+# Force download of app-ads.txt
+<Files "app-ads.txt">
+    Header set Content-Disposition "attachment; filename=app-ads.txt"
+    Header set Content-Type "text/plain"
+</Files>
