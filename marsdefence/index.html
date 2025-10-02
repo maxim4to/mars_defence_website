@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Defence - Tower Defense Game</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="../images/game_icon.png" alt="Mars Defence" class="logo-icon">
+                <h1>Mars Defence</h1>
+            </div>
+            <nav class="nav">
+                <a href="#screenshots" class="nav-link">Screenshots</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#privacy" class="nav-link">Privacy Policy</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="../images/game_icon.png" alt="Mars Defence Game Icon" class="hero-game-icon">
+                <h1 class="hero-title">Mars Defence</h1>
+                <p class="hero-subtitle">An exciting tower defense game where you defend your Martian colony from alien invaders</p>
+                <div class="hero-buttons">
+                    <a href="https://apps.apple.com/us/app/mars-defence/id6751149620" target="_blank" rel="noopener noreferrer">
+                        <img src="../images/app_store_badge.svg" alt="Download on the App Store" class="app-store-badge">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Screenshots Section -->
+    <section id="screenshots" class="screenshots">
+        <div class="container">
+            <h2 class="section-title">Game Screenshots</h2>
+            <p class="section-subtitle">See Mars Defence in action</p>
+            <div class="screenshots-container">
+                <button class="nav-btn nav-btn-left" id="prevBtn">&lt;</button>
+                <div class="screenshot-display" id="screenshotDisplay">
+                    <img src="../images/screenshot1.jpeg" alt="Mars Defence Game Screenshot 1" class="screenshot-image active" data-index="0">
+                    <img src="../images/screenshot2.jpeg" alt="Mars Defence Game Screenshot 2" class="screenshot-image" data-index="1">
+                    <img src="../images/screenshot3.jpeg" alt="Mars Defence Game Screenshot 3" class="screenshot-image" data-index="2">
+                    <img src="../images/screenshot4.jpeg" alt="Mars Defence Game Screenshot 4" class="screenshot-image" data-index="3">
+                </div>
+                <button class="nav-btn nav-btn-right" id="nextBtn">&gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Find answers to popular questions about Mars Defence</p>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is there paid content in the game?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, the game is completely free and contains no in-app purchases.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I play without internet?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, the game works completely offline. Internet is only needed for showing ads.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Does the game collect my data?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, the game does not collect personal data. All data is stored only locally on your device.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How to disable ads?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ads are part of the free game model and cannot be disabled.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Section -->
+    <section id="privacy" class="privacy">
+        <div class="container">
+            <h2 class="section-title">Privacy Policy</h2>
+            
+            <div class="privacy-content">
+                <div class="privacy-section">
+                    <h3>Information Collection</h3>
+                    <p>Mars Defence does NOT collect personal data from users. The game works completely locally on your device.</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>Advertising</h3>
+                    <p>The game contains ads through Google AdMob. Ads may be personalized based on your interests.</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>Local Data</h3>
+                    <p>The game saves only local data on your device: game progress, game settings and completion statistics.</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h3>Children</h3>
+                    <p>The game is not intended for children under 13 years old and does not collect information from children.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Player Support</h3>
+                        <p><a href="mailto:maxim4to@gmail.com" class="email-link">maxim4to@gmail.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Report a Bug</h3>
+                        <p>When reporting bugs, please describe:<br>
+                        - Game version<br>
+                        - Device and operating system<br>
+                        - Detailed description of the problem<br>
+                        - Steps to reproduce</p>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/mblzobva" method="POST">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
+                    </div>
+                    <!-- Hidden field for form identification -->
+                    <input type="hidden" name="_subject" value="Mars Defence - Contact Form">
+                    <input type="hidden" name="_next" value="?success=true">
+                    <input type="hidden" name="_captcha" value="false">
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+
+            <div class="form-message" id="formMessage" style="display: none;">
+                <p>Thank you! Your submission has been received!</p>
+            </div>
+            <div class="form-error" id="formError" style="display: none;">
+                <p>Oops! Something went wrong while submitting the form.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mars Defence. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
