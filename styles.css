@@ -461,6 +461,22 @@ section {
     line-height: 1.6;
 }
 
+.privacy-section ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.privacy-section li {
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.privacy-section li strong {
+    color: #000000;
+    font-weight: 600;
+}
+
 /* Contact Section */
 .contact {
     background: #2c2c2c;
